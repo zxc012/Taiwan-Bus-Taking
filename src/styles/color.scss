@@ -1,0 +1,18 @@
+$color_main: #61a68a;
+$color_main_hover: #438c6f;
+$color_font_normal: #333333;
+$color_btn: #b96c58;
+$color_bg_light: #f8f8f8;
+$color_mark: #9b51e0;
+
+.bg-main {
+  background-color: $color_main;
+}
+
+.bg-main-hover {
+  background-color: $color_main_hover;
+}
+
+.fz-normal {
+  color: $color_font_normal;
+}
