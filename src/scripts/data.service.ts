@@ -1,5 +1,4 @@
 import jsSHA from "jssha";
-// import { apiRouteInfo, routeInfo } from "./types";
 import * as env from "../../env.variables.js";
 
 export class DataService {
@@ -21,31 +20,4 @@ export class DataService {
       '"';
     return { Authorization: Authorization, "X-Date": UTCString };
   }
-
-  /** 取得自行車路線圖資
-   *
-   * @param cityName 縣市名稱
-   * @param townName 鄉鎮區名稱
-   * @returns {Promise<routeInfo[]>} 路線資訊圖資
-   */
-  // public static async getBikeRoute(
-  //   cityName: string,
-  //   townName: string
-  // ): Promise<routeInfo[]> {
-  //   return await fetch(
-  //     `https://ptx.transportdata.tw/MOTC/v2/Cycling/Shape/${cityName}?$filter=Town%20eq%20'${townName}'&$format=JSON`,
-  //     { headers: this.getAuthorizationHeader() }
-  //   )
-  //     .then((response) => response.json())
-  //     .then((result: apiRouteInfo[]) =>
-  //       result.map((data) => ({
-  //         name: data.RouteName,
-  //         start: data.RoadSectionStart,
-  //         end: data.RoadSectionEnd,
-  //         direction: data.Direction,
-  //         cyclingLength: data.CyclingLength,
-  //         geometry: data.Geometry,
-  //       }))
-  //     );
-  // }
 }

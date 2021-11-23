@@ -1,5 +1,3 @@
-// import { routeInfo } from "./types";
-
 export class DomService {
   // public static renderElement<T>(
   //   element: Element,
