@@ -2,17 +2,16 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require('dotenv-webpack');
-
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/index.ts',
     output: {
         filename: './scripts/[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true
     },
-    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -68,15 +67,15 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'styles/[name].[contenthash].css'
-        })
-        // new ImageMinimizerPlugin({
-        //     minimizerOptions: {
-        //         plugins: [
-        //             ['gifsicle', { interlaced: true }],
-        //             ['jpegtran', { progressive: true }],
-        //             ['optipng', { optimizationLevel: 5 }]
-        //         ],
-        //     }
-        // }),
+        }),
+        new ImageMinimizerPlugin({
+            minimizerOptions: {
+                plugins: [
+                    ['gifsicle', { interlaced: true }],
+                    ['jpegtran', { progressive: true }],
+                    ['optipng', { optimizationLevel: 5 }]
+                ],
+            }
+        }),
     ]
 }
