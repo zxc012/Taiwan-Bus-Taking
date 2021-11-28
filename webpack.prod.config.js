@@ -10,7 +10,7 @@ module.exports = {
     output: {
         filename: './scripts/[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/Taiwan-Tourguide/',
+        publicPath: '/Taiwan-Bus-Taking/',
         clean: true
     },
     // devServer: {
