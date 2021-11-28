@@ -1,6 +1,8 @@
 import homepage from "@views/home/home.view";
 import nearByBusStop from "@root/views/nearBy-bus-stop/nearBy-bus-stop.view";
 
+const publicPath = "/Taiwan-Tourguide/";
+
 const router = {
   "/home/": homepage,
   "/nearBy-bus-stop/": nearByBusStop,
@@ -16,17 +18,17 @@ export class RouterService {
   }
 
   public static go(path: string) {
-    history.pushState({}, null, path);
+    history.pushState({}, null, publicPath + path);
     this.load(path);
   }
 
   public static load(path: string) {
     console.log("load", path);
-    if (path === "/") path = "/home/";
+    if (path === publicPath) path = "/home/";
 
     if (!Object.keys(router).includes(path)) {
       path = "/home/";
-      history.pushState({}, null, path);
+      history.pushState({}, null, publicPath + path);
     }
 
     const view = new router[path]();
