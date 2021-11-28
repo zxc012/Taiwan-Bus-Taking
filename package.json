@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "./src/main.ts",
+  "homepage": "https://zxc012.github.io/Taiwan-Bus-Taking/",
   "scripts": {
     "dev": "webpack --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.prod.config.js",
