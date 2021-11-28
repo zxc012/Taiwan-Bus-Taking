@@ -1,7 +1,7 @@
 import homepage from "@views/home/home.view";
 import nearByBusStop from "@root/views/nearBy-bus-stop/nearBy-bus-stop.view";
 
-const publicPath = "/Taiwan-Tourguide/";
+const publicPath = "/Taiwan-Bus-Taking";
 
 const router = {
   "/home/": homepage,
@@ -25,6 +25,8 @@ export class RouterService {
   public static load(path: string) {
     console.log("load", path);
     if (path === publicPath) path = "/home/";
+
+    if (path.match(publicPath)) path = path.replace(publicPath, "");
 
     if (!Object.keys(router).includes(path)) {
       path = "/home/";
