@@ -13,9 +13,9 @@ module.exports = {
         publicPath: '/',
         clean: true
     },
-    devServer: {
-        historyApiFallback: true
-    },
+    // devServer: {
+    //     historyApiFallback: true
+    // },
     module: {
         rules: [
             {
