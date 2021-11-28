@@ -2,7 +2,7 @@
   "name": "taiwan-bus-taking",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.ts",
+  "main": "./src/main.ts",
   "scripts": {
     "dev": "webpack --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.prod.config.js",

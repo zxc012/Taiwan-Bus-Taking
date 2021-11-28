@@ -1,0 +1,38 @@
+$color_main: #61a68a;
+$color_main_hover: #438c6f;
+$color_secondary: #666666;
+$color_font_normal: #333333;
+$color_btn: #b96c58;
+$color_bg_light: #f8f8f8;
+$color_text: #ffffff;
+$color_mark: #9b51e0;
+
+.bg-main {
+  background-color: $color_main;
+}
+
+.bg-main-hover {
+  background-color: $color_main_hover;
+}
+
+.fz-normal {
+  color: $color_font_normal;
+}
+
+.fz-white {
+  color: $color_text;
+}
+
+.link-black {
+  color: $color_secondary;
+  &:hover {
+    color: lighten($color: $color_secondary, $amount: 10%);
+  }
+}
+
+.link-white {
+  color: $color_text;
+  &:hover {
+    color: darken($color: $color_text, $amount: 10%);
+  }
+}

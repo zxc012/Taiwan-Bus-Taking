@@ -6,13 +6,17 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.ts',
+    entry: './src/main.ts',
     output: {
         filename: './scripts/[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
         clean: true
     },
     devtool: 'source-map',
+    devServer: {
+        historyApiFallback: true
+    },
     module: {
         rules: [
             {
@@ -25,7 +29,7 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader'
-                ]
+                ],
             },
             {
                 test: /\.css/i,
@@ -56,8 +60,15 @@ module.exports = {
     },
     resolve: {
         alias: {
-            img: path.resolve(__dirname, 'src/images'),
-            font: path.resolve(__dirname, 'src/fonts')
+            'img': path.resolve(__dirname, 'src/assets/images'),
+            'font': path.resolve(__dirname, 'src/assets/fonts'),
+            '@img': path.resolve(__dirname, 'src/assets/images'),
+            '@font': path.resolve(__dirname, 'src/assets/fonts'),
+            '@root': path.resolve(__dirname, 'src'),
+            '@component': path.resolve(__dirname, 'src/components'),
+            '@service': path.resolve(__dirname, 'src/service'),
+            '@styles': path.resolve(__dirname, 'src/assets/styles'),
+            '@views': path.resolve(__dirname, 'src/views')
         },
         extensions: ['.tsx', '.ts', '.js'],
     },
@@ -69,14 +80,5 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'styles/[name].[contenthash].css'
         })
-        // new ImageMinimizerPlugin({
-        //     minimizerOptions: {
-        //         plugins: [
-        //             ['gifsicle', { interlaced: true }],
-        //             ['jpegtran', { progressive: true }],
-        //             ['optipng', { optimizationLevel: 5 }]
-        //         ],
-        //     }
-        // }),
     ]
 }

@@ -1,5 +1,9 @@
-@import "./color.scss";
-@import "./font.scss";
+@import "/node_modules/bootstrap/scss/functions";
+@import "@styles/variables.scss";
+@import "/node_modules/bootstrap/scss/bootstrap";
+@import "/node_modules/leaflet/dist/leaflet.css";
+@import "@styles/color.scss";
+@import "@styles/font.scss";
 
 * {
   font-family: "Roboto", serif;
@@ -23,8 +27,8 @@ body {
   min-height: 100%;
 }
 
-.content {
-  flex: 1;
+.stretch-content {
+  flex-grow: 1;
 }
 
 .title-mark {
@@ -65,9 +69,4 @@ body {
     ),
     #f8f2e5;
   border: 3px solid #ffffff;
-}
-
-footer .container {
-  height: 35px;
-  top: -35px;
 }
